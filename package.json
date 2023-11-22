@@ -1,0 +1,40 @@
+{
+  "name": "xhash-ssv-bulk-register",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "buildtest": "tsc",
+    "build": "tsc && javascript-obfuscator ./dist --output ./dist",
+    "buildconfig": "tsc && javascript-obfuscator ./dist --output ./dist --config config.json",
+    "startService": "pm2 start validatorHttp.json",
+    "startBalanceSchedule": "pm2 start ./dist/SSVBalanceSchedule.js",
+    "keygen": "node ./dist/keygen.js"
+  },
+  "keywords": [],
+  "author": "xhash.com",
+  "license": "ISC",
+  "dependencies": {
+    "@types/prompt": "^1.1.5",
+    "api": "^5.0.8",
+    "async-lock": "^1.4.0",
+    "axios": "^1.4.0",
+    "body-parser": "^1.20.2",
+    "commander": "^10.0.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "log4js": "^6.9.1",
+    "node-schedule": "^2.1.1",
+    "prompt": "^1.3.0",
+    "ssv-keys": "https://github.com/bloxapp/ssv-keys.git",
+    "web3": "1.10.1",
+    "web3-eth-contract": "1.10.1"
+  },
+  "devDependencies": {
+    "@types/async-lock": "^1.4.0",
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.14.1",
+    "pkg": "^5.8.1",
+    "ts-node": "^8.0.1"
+  }
+}
